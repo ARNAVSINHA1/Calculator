@@ -1,19 +1,20 @@
 .calculator {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+  position: relative;  
+}
+
+.calculator h1 {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   
-  .calculator input[type='text'] {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
+  margin: 0;
+  font-size: 24px;
+}
+
+.calculator input[type="text"] {
+  padding-top: 30px; 
+}
   
   .calculator .keypad {
     display: grid;
