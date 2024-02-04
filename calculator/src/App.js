@@ -3,9 +3,10 @@ import Calculator from './Calculator';
 
 const App = () => {
   return (
-    <div>
-      <h1>Advanced Calculator</h1>
+    <div id="calc">
+      <h1>Calculator</h1>
       <Calculator />
+      <h2> Jai Shree Ram </h2>
     </div>
   );
 };
