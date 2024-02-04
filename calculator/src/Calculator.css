@@ -1,8 +1,4 @@
-.calculator {
-  position: relative;  
-}
-
-.calculator h1 {
+.h2 {
   position: absolute;
   top: 0;
   left: 50%;
@@ -11,10 +7,30 @@
   margin: 0;
   font-size: 24px;
 }
-
-.calculator input[type="text"] {
-  padding-top: 30px; 
+.h1 {
+  position: relative;
+  top: 0;
+  left: 50%;
+  right:50%;
+  transform: translateX(-50%);
+  margin: 0;
+  font-size: 24px;
 }
+.calculator {
+    width: auto;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .calculator input[type='text'] {
+    width: 99%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
   
   .calculator .keypad {
     display: grid;
@@ -31,12 +47,15 @@
     background-color: #f2f2f2;
     cursor: pointer;
   }
-  
+  .calculator button.operations {
+    background-color: #ff9800;
+    color: #fff;
+  }
   .calculator button.highlight {
     background-color: #ff9800;
     color: #fff;
   }
-  .calculator button#result {
+  /* .calculator button#result {
     width: auto; 
-    grid-column: 1 / span 4;
-  }
+    grid-column: 1 / span 2;
+  } */
