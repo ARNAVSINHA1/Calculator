@@ -26,7 +26,8 @@ const Calculator = () => {
 
   return (
     <div className="calculator">
-      <input type="text" value={result} />
+    <h1>Advanced Calculator</h1>
+    <input type="text" value={result} />
       <div className="keypad">
         
         
