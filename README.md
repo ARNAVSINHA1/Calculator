@@ -1,7 +1,7 @@
 **React Calculator**
-This is a simple calculator app built with React. It allows users to perform basic arithmetic operations like addition, subtraction, multiplication and division.
+This is a simple calculator app built with React. It allows users to perform basic arithmetic operations like addition, subtraction, multiplication and division.<br>
 
-Features
+**Features**
 Perform basic math operations: +, -, *, /
 Clear the running calculation at any time
 Delete previous number character-by-character
