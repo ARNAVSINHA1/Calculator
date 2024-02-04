@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import * as math from 'mathjs';
 import './ScientificCalculator.css';
 
 function ScientificCalculator() {
@@ -48,15 +49,43 @@ function ScientificCalculator() {
   };
 
   const addDecimal = () => {
-    if (!number.includes('.')) {
-      setNumber(number + '.');
-      setInput(input + '.');
+    if (!displayValue.includes('.')) {
+      setDisplayValue(displayValue + '.');
+    }
+  };
+
+  const makePercentage = () => {
+    setDisplayValue((parseFloat(displayValue) / 100).toString());
+  };
+
+  const toggleSign = () => {
+    setIsPositive((prev) => !prev);
+    setDisplayValue((parseFloat(displayValue) * -1).toString());
+  };
+
+  const handleFunctionClick = (func) => {
+    try {
+      const result = math[func](parseFloat(displayValue));
+      setDisplayValue(result.toString());
+    } catch (error) {
+      setDisplayValue('Error');
+    }
+  };
+
+  // Add a button for the square function
+  const handleSquareClick = () => {
+    try {
+      const result = math.square(parseFloat(displayValue));
+      setDisplayValue(result.toString());
+    } catch (error) {
+      setDisplayValue('Error');
     }
   };
 
   return (
-    <div className="ScientificCalculator">
-      <input type="text" value={input} />
+    <div className="calculator">
+      <h1>Scientific Calculator </h1>
+      <input type="text" value={displayValue} readOnly />
       <div className="keypad">
         <button className="highlight" onClick={handleACClick} id="AC">
           AC
@@ -115,10 +144,12 @@ function ScientificCalculator() {
         <button className="operations" onClick={makePercentage}>
           %
         </button>
-        <button className="operations" onClick={handleEqualClick} id="result">
-          =
+        <button
+          className="operations"
+          onClick={() => handleFunctionClick('sqrt')}
+        >
+          √
         </button>
-        
         <button
           className="operations"
           onClick={() => handleFunctionClick('exp')}
@@ -183,10 +214,7 @@ function ScientificCalculator() {
         <button className="operations" onClick={handleSquareClick}>
           x²
         </button>
-        <button onClick={handleClick} name="pow">
-          ^
-        </button>
-        <button className="highlight" onClick={handleClick} id="result">
+        <button className="operations" onClick={handleEqualClick} id="result">
           =
         </button>
       </div>
@@ -194,7 +222,4 @@ function ScientificCalculator() {
   );
 }
 
-<<<<<<< HEAD
-export default ScientificCalculator;
-=======
 export default ScientificCalculator;

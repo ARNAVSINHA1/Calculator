@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './BasicCalculator.css';
-// import ExpressionEval from 'expression-eval';
+
 function BasicCalculator() {
   const [displayValue, setDisplayValue] = useState('0');
   const [operator, setOperator] = useState(null);
@@ -53,43 +53,18 @@ function BasicCalculator() {
     }
   };
 
-  // Function to parse and evaluate the expression
-  const parseAndEvaluate = (expression) => {
-    const operators = ['+', '-', '*', '/'];
-    const tokens = expression.split(' ');
+  const makePercentage = () => {
+    setDisplayValue((parseFloat(displayValue) / 100).toString());
+  };
 
-    const calculate = (a, b, operator) => {
-      switch (operator) {
-        case '+':
-          return a + b;
-        case '-':
-          return a - b;
-        case '*':
-          return a * b;
-        case '/':
-          return a / b;
-        default:
-          throw new Error(`Invalid operator: ${operator}`);
-      }
-    };
-
-    let accumulator = parseFloat(tokens.shift());
-    for (const token of tokens) {
-      if (operators.includes(token)) {
-        const secondOperand = parseFloat(tokens.shift());
-        accumulator = calculate(accumulator, secondOperand, token);
-      } else {
-        tokens.unshift(token);
-        break;
-      }
-    }
-
-    return accumulator;
+  const toggleSign = () => {
+    setIsPositive((prev) => !prev);
+    setDisplayValue((parseFloat(displayValue) * -1).toString());
   };
 
   return (
     <div className="calculator">
-      <input type="text" value={result} />
+      <input type="text" value={displayValue} readOnly />
       <div className="keypad">
         <button className="highlight" onClick={handleACClick} id="AC">
           AC
@@ -142,16 +117,13 @@ function BasicCalculator() {
         <button className="operations" onClick={addDecimal}>
           .
         </button>
-        <button id="numbers" onClick={() => handleNumberClick('0')}>
-          0
-        </button>
         <button className="operations" onClick={makePercentage}>
           %
         </button>
-        <button id="numbers" onClick={handleClick} name="0">
+        <button id="numbers" onClick={() => handleNumberClick('0')}>
           0
         </button>
-        <button className="highlight" onClick={handleClick} id="result">
+        <button className="operations" onClick={handleEqualClick} id="result">
           =
         </button>
       </div>
@@ -159,7 +131,4 @@ function BasicCalculator() {
   );
 }
 
-<<<<<<< HEAD
-export default BasicCalculator;
-=======
 export default BasicCalculator;
