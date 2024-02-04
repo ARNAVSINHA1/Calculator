@@ -19,6 +19,7 @@
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
   }
+<<<<<<< HEAD
   .h1 {
     position: center;
     top: 0;
@@ -28,6 +29,9 @@
     margin: 0;
     font-size: 24px;
   }
+=======
+  
+>>>>>>> 971cde9 (commit on "new")
   .calculator button {
     width: 100%;
     padding: 10px;
@@ -48,4 +52,8 @@
   /* .calculator button#result {
     width: auto; 
     grid-column: 1 / span 2;
+<<<<<<< HEAD
   } */
+=======
+  } */
+>>>>>>> 971cde9 (commit on "new")

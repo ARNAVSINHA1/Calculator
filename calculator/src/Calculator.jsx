@@ -11,6 +11,10 @@ function Calculator() {
       <button onClick={() => setIsScientific(prev => !prev)}>
         {isScientific ? 'Basic' : 'Scientific'}  
       </button>
+<<<<<<< HEAD
+=======
+     <h1>Basic Calculator </h1>
+>>>>>>> 971cde9 (commit on "new")
       {isScientific ? (
         <ScientificCalculator /> 
       ) : (  
