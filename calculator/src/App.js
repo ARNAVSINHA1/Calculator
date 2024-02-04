@@ -3,8 +3,8 @@ import Calculator from './Calculator';
 
 const App = () => {
   return (
-    <div className="app">
-      <h1>Calculator</h1>
+    <div>
+      <h1>Advanced Calculator</h1>
       <Calculator />
     </div>
   );
