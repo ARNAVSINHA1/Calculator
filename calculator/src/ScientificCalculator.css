@@ -40,17 +40,4 @@
   /* .calculator button#result {
     width: auto; 
     grid-column: 1 / span 2;
-<<<<<<< HEAD
   } */
-  .h1 {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    
-    margin: 0;
-    font-size: 24px;
-  }
-=======
-  } */
->>>>>>> 971cde9 (commit on "new")

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './BasicCalculator.css';
-<<<<<<< HEAD
-
+// import ExpressionEval from 'expression-eval';
 function BasicCalculator() {
   const [displayValue, setDisplayValue] = useState('0');
   const [operator, setOperator] = useState(null);
@@ -54,51 +53,6 @@ function BasicCalculator() {
     }
   };
 
-  const makePercentage = () => {
-    setDisplayValue((parseFloat(displayValue) / 100).toString());
-  };
-
-  const toggleSign = () => {
-    setIsPositive((prev) => !prev);
-    setDisplayValue((parseFloat(displayValue) * -1).toString());
-=======
-// import ExpressionEval from 'expression-eval';
-function BasicCalculator() {
-  const [result, setResult] = useState('');
-  const [number, setNumber] = useState('0');
-
-  const handleClick = (e) => {
-    const buttonName = e.target.name;
-    if (buttonName === 'AC') {
-      setResult('');
-      setNumber('0');
-    } else if (buttonName === 'Clear') {
-      setResult(result.slice(0, -1));
-      setNumber(number.slice(0, -1));
-    } else if (buttonName === '+/-') {
-      setNumber(number * -1);
-    } else if (buttonName === '=') {
-      try {
-        const calculatedResult = parseAndEvaluate(result);
-        setResult(calculatedResult.toString());
-        setNumber(calculatedResult.toString());
-      } catch (error) {
-        setResult('Error');
-      }
-    } else if (buttonName === '%') {
-      setNumber(number / 100);
-    } else {
-      setResult(result.concat(buttonName));
-      setNumber(number.concat(buttonName));
-    }
-  };
-
-  const addDecimal = () => {
-    if (!number.includes('.')) {
-      setNumber(number + '.');
-    }
-  };
-
   // Function to parse and evaluate the expression
   const parseAndEvaluate = (expression) => {
     const operators = ['+', '-', '*', '/'];
@@ -131,14 +85,11 @@ function BasicCalculator() {
     }
 
     return accumulator;
->>>>>>> 971cde9 (commit on "new")
   };
 
   return (
     <div className="calculator">
-<<<<<<< HEAD
-      <h1>Basic Calculator </h1>
-      <input type="text" value={displayValue} readOnly />
+      <input type="text" value={result} />
       <div className="keypad">
         <button className="highlight" onClick={handleACClick} id="AC">
           AC
@@ -197,70 +148,10 @@ function BasicCalculator() {
         <button className="operations" onClick={makePercentage}>
           %
         </button>
-        
-        <button className="operations" onClick={handleEqualClick} id="result">
-=======
-      <input type="text" value={result} />
-      <div className="keypad">
-        <button className="highlight" onClick={handleClick} id="AC">
-          AC
-        </button>
-        <button className="highlight" onClick={handleClick} id="Clear">
-          Clear
-        </button>
-        <button className="highlight" onClick={handleClick} id="plus-minus">
-          +/-
-        </button>
-        <button className="operations" onClick={handleClick} name="/">
-          /
-        </button>
-        <button id="numbers" onClick={handleClick} name="7">
-          7
-        </button>
-        <button id="numbers" onClick={handleClick} name="8">
-          8
-        </button>
-        <button id="numbers" onClick={handleClick} name="9">
-          9
-        </button>
-        <button className="operations" onClick={handleClick} name="*">
-          *
-        </button>
-        <button id="numbers" onClick={handleClick} name="4">
-          4
-        </button>
-        <button id="numbers" onClick={handleClick} name="5">
-          5
-        </button>
-        <button id="numbers" onClick={handleClick} name="6">
-          6
-        </button>
-        <button className="operations" onClick={handleClick} name="-">
-          -
-        </button>
-        <button id="numbers" onClick={handleClick} name="1">
-          1
-        </button>
-        <button id="numbers" onClick={handleClick} name="2">
-          2
-        </button>
-        <button id="numbers" onClick={handleClick} name="3">
-          3
-        </button>
-        <button className="operations" onClick={handleClick} name="+">
-          +
-        </button>
-        <button className="operations" onClick={addDecimal} name=".">
-          .
-        </button>
-        <button className="operations" onClick={handleClick} name="%">
-          %
-        </button>
         <button id="numbers" onClick={handleClick} name="0">
           0
         </button>
         <button className="highlight" onClick={handleClick} id="result">
->>>>>>> 971cde9 (commit on "new")
           =
         </button>
       </div>
@@ -272,4 +163,3 @@ function BasicCalculator() {
 export default BasicCalculator;
 =======
 export default BasicCalculator;
->>>>>>> 971cde9 (commit on "new")
