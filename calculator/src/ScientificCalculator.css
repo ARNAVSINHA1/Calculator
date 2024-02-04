@@ -1,0 +1,52 @@
+.ScientificCalculator {
+    width: auto;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .ScientificCalculator input[type='text'] {
+    width: 99%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .ScientificCalculator .keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .ScientificCalculator button {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    cursor: pointer;
+  }
+  .ScientificCalculator button.operations {
+    background-color: #ff9800;
+    color: #fff;
+  }
+  .ScientificCalculator button.highlight {
+    background-color: #ff9800;
+    color: #fff;
+  }
+  /* .calculator button#result {
+    width: auto; 
+    grid-column: 1 / span 2;
+  } */
+  .h1 {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    margin: 0;
+    font-size: 24px;
+  }
